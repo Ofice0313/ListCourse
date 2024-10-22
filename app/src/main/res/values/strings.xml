@@ -4,7 +4,7 @@
     <string name="sobrenome">Sobrenome</string>
     <string name="nome_do_curso">Nome do Curso</string>
     <string name="telefone">Número de Telefone</string>
-    <string name="limpar">LIMPAR</string>
-    <string name="salvar">SALVAR</string>
-    <string name="finalizar">FINALIZAR</string>
+    <string name="btn_limpar">LIMPAR</string>
+    <string name="btn_salvar">SALVAR</string>
+    <string name="btn_finalizar">FINALIZAR</string>
 </resources>
