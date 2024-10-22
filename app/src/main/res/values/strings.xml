@@ -2,7 +2,7 @@
     <string name="app_name">Lista de Cursos de Vip Android</string>
     <string name="primeiro_nome">Primeiro Nome</string>
     <string name="sobrenome">Sobrenome</string>
-    <string name="nome_do_curso">Nome do Curso</string>
+    <string name="nome_do_curso">Nome do devandroid.ofice.listcourse.model.Curso</string>
     <string name="telefone">Número de Telefone</string>
     <string name="btn_limpar">LIMPAR</string>
     <string name="btn_salvar">SALVAR</string>
