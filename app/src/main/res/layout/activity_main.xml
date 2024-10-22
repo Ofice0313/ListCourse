@@ -8,12 +8,114 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/primeiro_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/primeiro_nome"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        tools:layout_editor_absoluteX="11dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <EditText
+        android:id="@+id/sobrenome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/sobrenome"
+        app:layout_constraintTop_toBottomOf="@+id/primeiro_nome"
+        tools:layout_editor_absoluteX="11dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <EditText
+        android:id="@+id/nome_curso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/nome_do_curso"
+        app:layout_constraintTop_toBottomOf="@+id/sobrenome"
+        tools:layout_editor_absoluteX="11dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <EditText
+        android:id="@+id/telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/telefone"
+        app:layout_constraintTop_toBottomOf="@+id/nome_curso"
+        tools:layout_editor_absoluteX="11dp" />
+
+    <Button
+        android:id="@+id/limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/limpar"
+        android:textSize="20sp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintEnd_toStartOf="@+id/salvar"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="@+id/telefone"
+        app:layout_constraintTop_toBottomOf="@+id/telefone"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_goneMarginTop="16dp" />
+
+    <Button
+        android:id="@+id/salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/salvar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintTop_toBottomOf="@+id/telefone"
+        app:layout_constraintStart_toEndOf="@+id/limpar"
+        android:backgroundTint="@color/blue"
+        android:layout_marginLeft="160dp"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="282dp" />
+
+    <Button
+        android:id="@+id/finalizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/finalizar"
+        android:textSize="20sp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintTop_toBottomOf="@+id/limpar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="534dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
