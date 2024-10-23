@@ -5,13 +5,13 @@ public class Pessoa{
     private String primeiroNome;
     private String sobrenome;
     private String numeroTelefone;
-    private Curso curso;
+    private String  curso;
 
-    public Curso getCurso() {
+    public String getCurso() {
         return curso;
     }
 
-    public void setCurso(Curso curso) {
+    public void setCurso(String curso) {
         this.curso = curso;
     }
 
@@ -39,13 +39,13 @@ public class Pessoa{
         this.numeroTelefone = numeroTelefone;
     }
 
-
     @Override
     public String toString() {
         return "Pessoa{" +
                 "primeiroNome='" + primeiroNome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
                 ", numeroTelefone='" + numeroTelefone + '\'' +
+                ", curso=" + curso +
                 '}';
     }
 }

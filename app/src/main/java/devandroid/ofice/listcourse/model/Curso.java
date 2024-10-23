@@ -2,6 +2,7 @@ package devandroid.ofice.listcourse.model;
 
 public class Curso {
 
+
     private String nome;
 
     public String getNome() {
