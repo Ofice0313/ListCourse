@@ -1,11 +1,19 @@
 package devandroid.ofice.listcourse.model;
 
-public class Pessoa {
+public class Pessoa{
 
     private String primeiroNome;
     private String sobrenome;
-    private Curso curso;
     private String numeroTelefone;
+    private Curso curso;
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
 
     public String getPrimeiroNome() {
         return primeiroNome;
@@ -23,14 +31,6 @@ public class Pessoa {
         this.sobrenome = sobrenome;
     }
 
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
     public String getNumeroTelefone() {
         return numeroTelefone;
     }
@@ -39,12 +39,12 @@ public class Pessoa {
         this.numeroTelefone = numeroTelefone;
     }
 
+
     @Override
     public String toString() {
         return "Pessoa{" +
                 "primeiroNome='" + primeiroNome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
-                ", curso=" + curso +
                 ", numeroTelefone='" + numeroTelefone + '\'' +
                 '}';
     }
