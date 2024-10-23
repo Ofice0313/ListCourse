@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.ofice.listcourse.R;
+import devandroid.ofice.listcourse.model.Curso;
+import devandroid.ofice.listcourse.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,5 +24,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Pessoa pessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome("Marcelo");
+        pessoa.setSobrenome("Ofice");
+        pessoa.setNumeroTelefone("877312374");
+        pessoa.setCurso(new Curso("Programação"));
+
+        int parada = 0;
     }
 }

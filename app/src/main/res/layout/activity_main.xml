@@ -81,13 +81,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/btn_limpar"
         android:textSize="20sp"
-        android:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/finalizar"
         app:layout_constraintEnd_toStartOf="@+id/salvar"
         app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="@+id/telefone"
+        app:layout_constraintStart_toStartOf="@+id/finalizar"
         app:layout_constraintTop_toBottomOf="@+id/telefone"
         app:layout_constraintVertical_bias="0.0"
         app:layout_goneMarginTop="16dp" />
@@ -96,12 +96,13 @@
         android:id="@+id/salvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
         android:text="@string/btn_salvar"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintEnd_toEndOf="@+id/finalizar"
         app:layout_constraintStart_toEndOf="@+id/limpar"
         app:layout_constraintTop_toBottomOf="@+id/telefone"
         app:layout_constraintVertical_bias="0.0" />
@@ -111,12 +112,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/btn_finalizar"
         android:textSize="20sp"
-        android:backgroundTint="@color/blue"
         app:layout_constraintTop_toBottomOf="@+id/limpar"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="534dp"/>
+        tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
