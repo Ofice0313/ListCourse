@@ -1,6 +1,7 @@
 package devandroid.ofice.listcourse.view;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,9 @@ import devandroid.ofice.listcourse.model.Curso;
 import devandroid.ofice.listcourse.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    String dadosPessoa;
+    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setNumeroTelefone("877312374");
         pessoa.setCurso(new Curso("Programação"));
 
+
+        Log.i("POO", pessoa.toString());
         int parada = 0;
     }
 }

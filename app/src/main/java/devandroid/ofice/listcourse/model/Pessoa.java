@@ -38,4 +38,14 @@ public class Pessoa {
     public void setNumeroTelefone(String numeroTelefone) {
         this.numeroTelefone = numeroTelefone;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "primeiroNome='" + primeiroNome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", curso=" + curso +
+                ", numeroTelefone='" + numeroTelefone + '\'' +
+                '}';
+    }
 }
