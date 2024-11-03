@@ -54,25 +54,24 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor listaVip = sharedPreferences.edit(); // significa que o arquivo esta aberto para edição
         Pessoa pessoa = new Pessoa();
 
-        /*pessoa.setCurso("Java");
-        pessoa.setPrimeiroNome("Marcelo");
-        pessoa.setSobrenome("Ofice");
-        pessoa.setNumeroTelefone("877312374");*/
+        pessoa.setPrimeiroNome(sharedPreferences.getString("primeiroNome", ""));
+        pessoa.setSobrenome(sharedPreferences.getString("sobreNome", ""));
+        pessoa.setCurso(sharedPreferences.getString("curso", ""));
+        pessoa.setNumeroTelefone(sharedPreferences.getString("telefone", ""));
 
         editPrimeiroNome = findViewById(R.id.edit_primeiro_nome);
         editSobrenome = findViewById(R.id.edit_sobrenome);
         editNomeDoCurso = findViewById(R.id.edit_nome_curso);
         editTelefone = findViewById(R.id.edit_telefone);
 
-        btnLimpar = findViewById(R.id.btn_limpar);
-        btnSalvar = findViewById(R.id.btn_salvar);
-        btnfinalizar = findViewById(R.id.btn_finalizar);
-
-
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobrenome());
         editNomeDoCurso.setText(pessoa.getCurso());
         editTelefone.setText(pessoa.getNumeroTelefone());
+
+        btnLimpar = findViewById(R.id.btn_limpar);
+        btnSalvar = findViewById(R.id.btn_salvar);
+        btnfinalizar = findViewById(R.id.btn_finalizar);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
