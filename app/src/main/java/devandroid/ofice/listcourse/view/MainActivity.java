@@ -1,11 +1,13 @@
 package devandroid.ofice.listcourse.view;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,9 +16,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.ofice.listcourse.R;
+import devandroid.ofice.listcourse.controller.CursoController;
 import devandroid.ofice.listcourse.controller.PessoaController;
-import devandroid.ofice.listcourse.model.Curso;
 import devandroid.ofice.listcourse.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     String dadosOutraPessoa;
 
     PessoaController pessoaController;
+    CursoController cursoController;
+    List<String> nomeDosCursos;
 
     SharedPreferences sharedPreferences;
     public static final String NOME_PREFERENCES = "pref_listaVip";
@@ -38,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     Button btnSalvar;
     Button btnfinalizar;
 
+    Spinner spinner;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        cursoController = new CursoController();
+        nomeDosCursos = cursoController.dadosParaSpinner();
+
 
         //O Zero significa o nivel de autorizacao que terá o arquivo, nesta o 0 significa leitura e escrita
         sharedPreferences = getSharedPreferences(NOME_PREFERENCES, 0);
@@ -63,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         editSobrenome = findViewById(R.id.edit_sobrenome);
         editNomeDoCurso = findViewById(R.id.edit_nome_curso);
         editTelefone = findViewById(R.id.edit_telefone);
+        spinner = findViewById(R.id.spinnerListaDeCursos);
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobrenome());
@@ -72,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btn_limpar);
         btnSalvar = findViewById(R.id.btn_salvar);
         btnfinalizar = findViewById(R.id.btn_finalizar);
+
+        //Adapter, Layout, Injectar o Adapter ao Spinner - A lista gerada
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+                cursoController.dadosParaSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override

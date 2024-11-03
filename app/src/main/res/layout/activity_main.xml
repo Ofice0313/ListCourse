@@ -90,7 +90,7 @@
         app:layout_editor_absoluteX="11dp"/>
 
     <Spinner
-        android:id="@+id/listaDeCursos"
+        android:id="@+id/spinnerListaDeCursos"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_salvar"
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="@+id/btn_finalizar"
-        app:layout_constraintTop_toBottomOf="@+id/listaDeCursos"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerListaDeCursos"
         app:layout_constraintVertical_bias="0.0"
         app:layout_goneMarginTop="16dp" />
 
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_finalizar"
         app:layout_constraintEnd_toEndOf="@+id/btn_finalizar"
         app:layout_constraintStart_toEndOf="@+id/btn_limpar"
-        app:layout_constraintTop_toBottomOf="@+id/listaDeCursos"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerListaDeCursos"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
