@@ -1,5 +1,6 @@
 package devandroid.ofice.listcourse.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.ofice.listcourse.R;
+import devandroid.ofice.listcourse.controller.PessoaController;
 import devandroid.ofice.listcourse.model.Curso;
 import devandroid.ofice.listcourse.model.Pessoa;
 
@@ -21,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
     String dadosPessoa;
     String dadosOutraPessoa;
+
+    PessoaController pessoaController;
+
+    SharedPreferences sharedPreferences;
+    public static final String NOME_PREFERENCES = "pref_listaVip";
 
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -42,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //O Zero significa o nivel de autorizacao que terá o arquivo, nesta o 0 significa leitura e escrita
+        sharedPreferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = sharedPreferences.edit(); // significa que o arquivo esta aberto para edição
         Pessoa pessoa = new Pessoa();
 
         /*pessoa.setCurso("Java");
@@ -91,6 +101,14 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCurso(editNomeDoCurso.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+                listaVip.putString("primeiroNome: ", pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome: ", pessoa.getSobrenome());
+                listaVip.putString("curso: ", pessoa.getCurso());
+                listaVip.putString("telefone: ", pessoa.getNumeroTelefone());
+
+                listaVip.apply(); //salva os dados.
+                pessoaController.salvar(pessoa);
             }
         });
 
